@@ -16,13 +16,10 @@ headers: {
 body: JSON.stringify({
 model: 'claude-sonnet-4-20250514',
 max_tokens: 600,
-messages: [{
-role: 'user',
-content: [
+messages: [{ role: 'user', content: [
 { type: 'image', source: { type: 'base64', media_type: mediaType, data: image }},
 { type: 'text', text: '中医学の舌診の観点からこの舌の画像を分析してください。以下を日本語で簡潔に：\n1.舌の色\n2.舌の形\n3.舌苔\n4.潤い\n5.推測体質（気虚/血虚/陰虚/陽虚/気滞/血瘀/痰湿/湿熱）\n6.養生アドバイス1〜2文\n※医療診断ではありません。'}
-]
-}]
+]}]
 })
 });
 const data = await response.json();
